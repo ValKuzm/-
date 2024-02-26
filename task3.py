@@ -1,8 +1,10 @@
 import csv
-
+# импортируем библиотеку
 with open('songs.csv', encoding='UTF-8') as file:
+    # открываем файл как список со словарями внутри
     reader = csv.DictReader(file, delimiter=';', quotechar='"')
     songs = list(reader)[1:]
+    # реализуем поисковую систему
     name_artist = input()
     while name_artist != '0':
         for song in songs:
