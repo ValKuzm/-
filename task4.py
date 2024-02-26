@@ -8,16 +8,16 @@ with open('songs.csv', encoding='UTF-8') as file:
     alphavit = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
     alphavit = alphavit + alphavit.upper()
     # реализуем сортировку
-    russian_artists = list()
-    foreign_artists = list()
+    russian_artists = set()
+    foreign_artists = set()
     for song in songs:
         flag = True
         for i in alphavit:
             if i in song['artist_name']:
                 flag = False
         if not flag:
-            russian_artists.append(song['artist_name'])
+            russian_artists.add(song['artist_name'])
         else:
-            foreign_artists.append(song['artist_name'])
-    print(len(russian_artists))
-    print(len(foreign_artists))
+            foreign_artists.add(song['artist_name'])
+    print(len(list(russian_artists)))
+    print(len(list(foreign_artists)))
