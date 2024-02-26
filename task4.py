@@ -1,15 +1,12 @@
 import csv
 # импортируем библиотеку
-with open('songs.csv', encoding='UTF-8') as file:
-    # считываем файл как список со словарями
-    reader = csv.DictReader(file, delimiter=';', quotechar='"')
-    songs = list(reader)[1:]
+russian_artists = [el for el in open('russian_artists.txt']
+    songs = russian_artists + foreign_artists
     # записываем все буква алфавита
     alphavit = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
     alphavit = alphavit + alphavit.upper()
     # реализуем сортировку
-    russian_artists = set()
-    foreign_artists = set()
+    foreign_artists = [el for el in open(foreign_artists.txt']
     for song in songs:
         flag = True
         for i in alphavit:
